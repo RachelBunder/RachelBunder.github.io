@@ -1,3 +1,7 @@
+---
+type: splash
+title: Weather Context
+---
 # Weather Context
 
 <!--At Govhack 2016 (zz link!) I (and my team partner) had decided to make a twitterbot. We didn't know what this twitterbot would do, but we wanted to build one. Poking around in the code repositories I discovered that you can get all the historical weather data form the BOM (zzz link!). I like random weather trivia so my first plan was to build a twitterbot that tells you how hot or cold it has been, relative to the historical data - "Today is the 4th hottest 9th of February". In the end we couldn't do it for govhack as it didn't use enough data repositories (we made Creature Feasutres (zzz link!) instead). -->
