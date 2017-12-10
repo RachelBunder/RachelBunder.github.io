@@ -245,7 +245,6 @@ DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.6)
   jekyll-remote-theme
-  minima (~> 2.0)
   minimal-mistakes-jekyll
   tzinfo-data
 

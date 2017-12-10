@@ -1,6 +1,5 @@
 ---
 type: splash
-title: Weather Context
 ---
 # Weather Context
 
