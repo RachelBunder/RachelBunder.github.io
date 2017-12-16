@@ -8,11 +8,11 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+locale                   : "en-au"
+title                    : "Rachel"
+title_separator          : "|"
+name                     : "Rachel Bunder"
+description              : "A collection of what I've been learning, projects and other thoughts."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -61,7 +61,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : @ADuckIsMyFiend
 facebook:
   username               :
   app_id                 :
@@ -83,10 +83,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  name             : "Rachel Bunder"
+  avatar           : assets/other/profile.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I'm a Data Scientist based in Sydney, Australia. Day to day I work out why solar panels aren't working. My side projects are not always coding - some crochet, knitting and sewing comes into it as well."
+  location         : "Sydney, Australia"
   email            :
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : rachelbunder
   gitlab           :
   google_plus      :
   keybase          :
@@ -108,7 +108,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : @ADuckIsMyFiend
   vine             :
   weibo            :
   xing             :
