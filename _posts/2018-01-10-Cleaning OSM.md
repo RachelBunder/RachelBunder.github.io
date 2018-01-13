@@ -7,12 +7,11 @@ header:
     alt-text: "Traffic"
 ---
 
-# Cleaning Open Street Maps
-What is the most common street name in Australia? This is what I wondered after seeing a __[Washington Post article](https://www.washingtonpost.com/blogs/govbeat/wp/2015/03/06/these-are-the-most-popular-street-names-in-every-state/)__ on the most common street name in America. What really got me is all the plant names - Cedar, Oak, and Aspen etc., and I thought - we don't do that in Australia - do we?
+What is the most common street name in Australia? This is what I wondered after seeing a __[Washington Post article](https://www.washingtonpost.com/blogs/govbeat/wp/2015/03/06/these-are-the-most-popular-street-names-in-every-state/)__ on the most common street name in America. What really got me is all the plant names - Cedar, Oak, Aspen, etc., and I thought - we don't do that in Australia - do we?
 
 So I went down a fairly windy road to find out. Sure, there are __[articles](https://www.realestate.com.au/news/weird-and-common-australian-street-names/)__ out there that list the common streets in Australia, but where is the fun in that? 
 
-When I started this project the __[Geocoded National Address File (G-NAF)](https://data.gov.au/dataset/geocoded-national-address-file-g-naf)__ wasn't yet available. I can't exactly remember what other soures of data I was looked at, but Open Street MAP (OSM) was the easiest to get hold of, so I used that. It also had the benefit that if I ever wanted to do this analysis on any other country the data would be available.  
+When I started this project the __[Geocoded National Address File (G-NAF)](https://data.gov.au/dataset/geocoded-national-address-file-g-naf)__ wasn't yet available. I can't exactly remember what other sources of data I was looked at, but Open Street MAP (OSM) was the easiest to get hold of, so I used that. It also had the benefit that if I ever wanted to do this analysis on any other country the data would be available.  
 
 
 
@@ -196,7 +195,7 @@ I like that you can identify the Royal National Park (the empty patch in the bot
 ## Data Cleanup
 In OSM, a lot more than just streets are included.
 
-There are three classes *highway*, *railway* and *man-made*. The railway class includes rail lines (both goods and passenger) and light rail lines (used and disused). These are not streets.
+There are three classes __[highway](https://wiki.openstreetmap.org/wiki/Key:highway)__, __[railway](https://wiki.openstreetmap.org/wiki/Key:railway)__ and __[man-made](https://wiki.openstreetmap.org/wiki/Key:man_made)__. The railway class includes rail lines (both goods and passenger) and light rail lines (used and disused). These are not streets.
 
 
 ```python
@@ -484,7 +483,7 @@ ax.set_xlim((150.6, 151.3))
 ![All Man Made class 'roads' in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_13_1.png)
 
 
-This leaves us with the highway class which contains actual streets, but also includes other things like footways and cycleways which are not streets. All of this information is contained in the 'type' attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
+This leaves us with the highway class which contains actual streets, but also includes other things like footways and cycleways which are not streets. All of this information is contained in the *type* attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
 
 
 The highway types we see in Sydney include:
@@ -596,7 +595,7 @@ streets[streets["access"] == 'hgv']
 
 
 
-Finally, there is service. This tag provides additional context on what the road is used for. There are a few services I want to exclude. Namely, driveway, private_road, bicycle_training_track, go-kart, drive-through (bye KFC drive-through) as they are not public roads I can drive on. I've kept parking_aisle as I am driving on it before and after parking. 
+Finally, there is __[service attribute](https://wiki.openstreetmap.org/wiki/Key:service)__. This provides additional context on what the road is used for. There are a few services I want to exclude. Namely, driveway, private_road, bicycle_training_track, go-kart, drive-through (bye KFC drive-through) as they are not public roads I can drive on. I've kept parking_aisle as I am driving on it before and after parking. 
 
 
 ```python
