@@ -4,7 +4,7 @@ author_profile: true
 except: 
 header:
     image: /assets/header_images/cleaning_osm.JPG
-    caption: "Traffic"
+    alt-text: "Traffic"
 ---
 
 # Cleaning Open Street Maps
@@ -188,13 +188,7 @@ ax.set_ylabel('Latitude')
 
 
 
-
-    <matplotlib.text.Text at 0x1cbfa6cf8>
-
-
-
-
-![All streets Sydney](assets/posts/cleaning_osm_files/cleaning_osm_files/cleaning_osm_6_1.png)
+![All streets Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_6_1.png)
 
 
 I like that you can identify the Royal National Park (the emptry patch in the bottom middle), Botany Bay (to the right of the Natioanl Park) and even the Harbour Bridge (the first crossing of the river harbour of Botany Bay)
@@ -342,14 +336,7 @@ ax.set_ylabel('Latitude')
 ```
 
 
-
-
-    <matplotlib.text.Text at 0x23c8d4438>
-
-
-
-
-![All railways in Sydney](assets/posts/cleaning_osm_files/cleaning_osm_10_1.png)
+![All railways in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_10_1.png)
 
 
 Let's look at the man-made class. This contains thing susch as the Fish Market and Taronga Zoo Ferry Wharf. And piers and groynes (low walls built out to sea to stop errosion).  Also not what I would call streets.
@@ -494,14 +481,7 @@ ax.set_xlim((150.6, 151.3))
 ```
 
 
-
-
-    (150.6, 151.3)
-
-
-
-
-![All Man Made class 'raods' in Sydney](cleaning_osm_files/cleaning_osm_13_1.png)
+![All Man Made class 'raods' in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_13_1.png)
 
 
 This leaves us with the highway class which contains actual streets. But also includes other things like footways and cycleways which are not roads. All of this information is contained in the 'type' attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
