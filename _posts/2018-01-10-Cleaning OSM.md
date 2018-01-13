@@ -8,26 +8,26 @@ header:
 ---
 
 # Cleaning Open Street Maps
-What is the most common street name in Australia? This is question I wondered after seeing a __[Washington Post article](https://www.washingtonpost.com/blogs/govbeat/wp/2015/03/06/these-are-the-most-popular-street-names-in-every-state/)__ on the most common street name in America. What really got me is all the plant names - Cedar, Oak, and Aspen etc., and I thought - we don't do that in Australia - do we?. 
+What is the most common street name in Australia? This is what I wondered after seeing a __[Washington Post article](https://www.washingtonpost.com/blogs/govbeat/wp/2015/03/06/these-are-the-most-popular-street-names-in-every-state/)__ on the most common street name in America. What really got me is all the plant names - Cedar, Oak, and Aspen etc., and I thought - we don't do that in Australia - do we?
 
-So I set out to find out. Sure there are __[articles](https://www.realestate.com.au/news/weird-and-common-australian-street-names/)__ out there that list the common streets in Australia, but where is the fun in that? 
+So I went down a fairly windy road to find out. Sure, there are __[articles](https://www.realestate.com.au/news/weird-and-common-australian-street-names/)__ out there that list the common streets in Australia, but where is the fun in that? 
 
 When I started this project the __[Geocoded National Address File (G-NAF)](https://data.gov.au/dataset/geocoded-national-address-file-g-naf)__ wasn't yet available. I can't exactly remember what other soures of data I was looked at, but Open Street MAP (OSM) was the easiest to get hold of, so I used that. It also had the benefit that if I ever wanted to do this analysis on any other country the data would be available.  
 
 
 
 ## Cleaning OSM data
-To start off with, I am just considering Sydney - Australia is just too big. Testing different ideas would take forever. And I live in Sydney and am familar with the streets. I should be able to notice any problems with my modelling. 
+To start off with, I am just considering Sydney - Australia is just too big. It is much quicker to test ideas on a small subset of Australia. And I live in Sydney and am familar with the streets. I should be able to notice any problems with my modelling. 
 
 
-I got the data from __[metro extracts](https://mapzen.com/data/metro-extracts/)__ which is sadly shutting down at the end of January 2018. The geojson download gives you a folder of different files already divided up by map feature.
+I got the data from __[Metro Extracts](https://mapzen.com/data/metro-extracts/)__ which is sadly shutting down at the end of January 2018. The geojson download gives you a folder of different files already divided up by map feature.
 
 ![File structue of Metro Maps geojson download](/assets/posts/cleaning_osm_files/metro_maps_files.png)
 
-Conveniently there is are three files deficated to the roads in Sydney. The two \gen files are generalised versions of the roads_gen file The roads_gen form  is a generalised version of the roads file - it incudes simplified coordinates. 
+Conveniently, there are three files dedicated to the roads in Sydney. The two road_gen files are generalised versions of the roads_gen file. The roads_gen verions are generalised versions of the roads file - they incude simplified coordinates. 
 
 ### Reading
-First I need to read in the data. To do this I'm using geopandas as it can handle the geometry data - the longitude and latitude. As a first round of basic cleaning I'm removing all streets that do not have a defined name and then changing the street name to all lower case
+First I need to read in the data. To do this I'm using geopandas, as it can handle the geometry data - the longitude and latitude. As a first round of basic cleaning I'm removing all streets that do not have a defined name and then changing the street name to all lower case.
 
 
 ```python
@@ -47,7 +47,7 @@ streets = streets[~streets["name"].isnull()]
 streets["name"] = streets["name"].apply(lambda x: x.lower())
 ```
 
-This is what the data we get from metro extracts looks likes:
+This is what the data we get from Metro Extracts looks like:
 
 
 ```python
@@ -191,12 +191,12 @@ ax.set_ylabel('Latitude')
 ![All streets Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_6_1.png)
 
 
-I like that you can identify the Royal National Park (the emptry patch in the bottom middle), Botany Bay (to the right of the Natioanl Park) and even the Harbour Bridge (the first crossing of the river harbour of Botany Bay)
+I like that you can identify the Royal National Park (the empty patch in the bottom middle), Botany Bay (to the right of the National Park) and even the Harbour Bridge (the first crossing of the harbour north of Botany Bay).
 
 ## Data Cleanup
-In OSM there a lot more than just streets are included.
+In OSM, a lot more than just streets are included.
 
-There are three clsses *highway*, *railway* and *man-made*. The railway class include rail-lines (both goods and passenger), light rail lines (used and disued). These are not streets
+There are three classes *highway*, *railway* and *man-made*. The railway class includes rail lines (both goods and passenger) and light rail lines (used and disused). These are not streets.
 
 
 ```python
@@ -339,7 +339,7 @@ ax.set_ylabel('Latitude')
 ![All railways in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_10_1.png)
 
 
-Let's look at the man-made class. This contains thing susch as the Fish Market and Taronga Zoo Ferry Wharf. And piers and groynes (low walls built out to sea to stop errosion).  Also not what I would call streets.
+Let's look at the man-made class. This contains things such as the Fish Market, Taronga Zoo Ferry Wharf, piers and groynes (low walls built out to sea to stop errosion).  Also not what I would call streets.
 
 
 ```python
@@ -481,10 +481,10 @@ ax.set_xlim((150.6, 151.3))
 ```
 
 
-![All Man Made class 'raods' in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_13_1.png)
+![All Man Made class 'roads' in Sydney](/assets/posts/cleaning_osm_files/cleaning_osm_13_1.png)
 
 
-This leaves us with the highway class which contains actual streets. But also includes other things like footways and cycleways which are not roads. All of this information is contained in the 'type' attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
+This leaves us with the highway class which contains actual streets, but also includes other things like footways and cycleways which are not streets. All of this information is contained in the 'type' attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
 
 
 The highway types we see in Sydney include:
@@ -505,13 +505,13 @@ streets[streets["class"] == 'highway']["type"].unique()
 
 
 
-At this point I needed to decide "What is a road?". Where do I draw the line between footway (pedestrains only), living_street (pedestrians have priority), cycleway (bikes allowed) or secondary_link (a road joining a motorway and another street)?
+At this point I need to decide "What is a street?". Where do I draw the line between footway (pedestrains only), living_street (pedestrians have priority), cycleway (bikes allowed) or secondary_link (a road joining a motorway and another street)?
 
-I decided I wanted to be as incusive as possible with this definition. Motorways should be included as they have names, such as the Hume Highway (some have less interesting names like the M5 Motorway). I felt that link roads should be included as they are also mostly named. Although there are also ones named 'Westlink M7 onramp', there shouldn't be so many of them that Westlink M7 is a contender for the most common street name. 
+I want to be as incusive as possible with this definition. Motorways should be included as they have names, such as the Hume Highway (some have less interesting names like the M5 Motorway). I feel that link roads should be included as they are also mostly named. Although there are also ones named 'Westlink M7 onramp', there shouldn't be so many of them that Westlink M7 is a contender for the most common street name. 
 
-I the end I decided a street is something I'm allowed to  drive a car on. This means I will remove the pedestrian and non-car orientated streets. It also means I will remove private streets or those without public access, such as those at Holsworthy Barracks.  
+I have decided a street is something I'm allowed to drive a car on. This means I will remove the pedestrian and non-car orientated streets. It also means I will remove private streets or those without public access, such as those at Holsworthy Barracks.  
 
-There is also the 'access' column which gives information on who can access this road. (give link to OSM)
+There is also the __['access' key](https://wiki.openstreetmap.org/wiki/Key:access)__ which gives information on who can access this road.
 
 
 ```python
@@ -527,7 +527,7 @@ streets["access"].unique()
 
 
 
-I wanted to keep as many streets as possible, but also keep it to roads that are public. I removed private roads, no access roads, military roads and HGV.
+I want to keep as many streets as possible, but also keep it to roads that are public, thus I'm not including no access roads, military roads and HGV (Heavy Goods Vehicle) roads are not real streets.
 
 Note that 'None' just means that no access conditions have been recorded. 
 
@@ -596,7 +596,7 @@ streets[streets["access"] == 'hgv']
 
 
 
-Finally, there is service. This tag provides additional context on what the road is used for. There are a few services I want to exclude. Namely, driveway, private_road, bicycle_training_track, go-kart, drive-through (bye KFC drive-through) as they are not public roads I can drive on. I've kept parking_aile as I am driving on it before and after parking. 
+Finally, there is service. This tag provides additional context on what the road is used for. There are a few services I want to exclude. Namely, driveway, private_road, bicycle_training_track, go-kart, drive-through (bye KFC drive-through) as they are not public roads I can drive on. I've kept parking_aisle as I am driving on it before and after parking. 
 
 
 ```python
