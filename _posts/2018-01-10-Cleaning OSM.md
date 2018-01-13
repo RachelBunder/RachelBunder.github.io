@@ -22,7 +22,7 @@ To start off with, I am just considering Sydney - Australia is just too big. Tes
 
 I got the data from __[metro extracts](https://mapzen.com/data/metro-extracts/)__ which is sadly shutting down at the end of January 2018. The geojson download gives you a folder of different files already divided up by map feature.
 
-![File structue of Metro Maps geojson download](pictures/metro_maps_files.png)
+![File structue of Metro Maps geojson download](/assets/posts/cleaning_osm_files/metro_maps_files.png)
 
 Conveniently there is are three files deficated to the roads in Sydney. The two \gen files are generalised versions of the roads_gen file The roads_gen form  is a generalised version of the roads file - it incudes simplified coordinates. 
 
@@ -194,7 +194,7 @@ ax.set_ylabel('Latitude')
 
 
 
-![png](cleaning_osm_files/cleaning_osm_6_1.png)
+![All streets Sydney](assets/posts/cleaning_osm_files/cleaning_osm_files/cleaning_osm_6_1.png)
 
 
 I like that you can identify the Royal National Park (the emptry patch in the bottom middle), Botany Bay (to the right of the Natioanl Park) and even the Harbour Bridge (the first crossing of the river harbour of Botany Bay)
@@ -349,7 +349,7 @@ ax.set_ylabel('Latitude')
 
 
 
-![png](cleaning_osm_files/cleaning_osm_10_1.png)
+![All railways in Sydney](assets/posts/cleaning_osm_files/cleaning_osm_10_1.png)
 
 
 Let's look at the man-made class. This contains thing susch as the Fish Market and Taronga Zoo Ferry Wharf. And piers and groynes (low walls built out to sea to stop errosion).  Also not what I would call streets.
@@ -501,7 +501,7 @@ ax.set_xlim((150.6, 151.3))
 
 
 
-![png](cleaning_osm_files/cleaning_osm_13_1.png)
+![All Man Made class 'raods' in Sydney](cleaning_osm_files/cleaning_osm_13_1.png)
 
 
 This leaves us with the highway class which contains actual streets. But also includes other things like footways and cycleways which are not roads. All of this information is contained in the 'type' attribute. For a complete list of highway types and explanations on what they are, have a look at the  __[OSM wiki](http://www.wiki.openstreetmap.org/wiki/Key:highway)__
