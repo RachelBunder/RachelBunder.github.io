@@ -1,7 +1,8 @@
 ---
 layout: single
 author_profile: true
-except: 
+date: 2019-12-01 12:00 +1000
+categories: advent_code_2019, R
 header:
     image: /assets/header_images/advent_code_1.JPG
     alt-text: "to Come"
