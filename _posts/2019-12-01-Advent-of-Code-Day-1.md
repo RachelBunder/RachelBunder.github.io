@@ -1,11 +1,7 @@
 ---
 layout: single
 author_profile: true
-date: 2019-12-01 12:00 +1000
-categories: advent_code_2019, R
-header:
-    image: /assets/header_images/advent_code_1.JPG
-    alt-text: "to Come"
+date: 2019-12-01 12:00 f+1000
 ---
 
 Learning R more has been in my to do list for a while, so I thought I would attempt __[Advent of Code](https://adventofcode.com/2019/about)__ in R. Here is Day 1.
