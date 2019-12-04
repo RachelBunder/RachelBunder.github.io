@@ -122,4 +122,4 @@ print(min_dist_steps)
 
 
 
-[^1]: Don't try to write your own shuffle algorithm. __(Fisher-Yates)[https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle]__ is your friend
+[^1]: Don't try to write your own shuffle algorithm. __[Fisher-Yates](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)__ is your friend
