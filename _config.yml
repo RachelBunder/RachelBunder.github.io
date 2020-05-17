@@ -118,6 +118,8 @@ author:
 # Reading Files
 include: ["_pages"]
 
+github: [metadata]
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -176,7 +178,7 @@ kramdown:
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  #style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 
 # Outputting
