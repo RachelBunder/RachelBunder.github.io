@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 published: true
 date: 2019-12-02 12:00 f+1000
+classes: wide
 ---
 
 __[Second day of Advent of Code](https://adventofcode.com/2019/day/2)__. This time our computer burst into flames and we have to reset it. I'm not sure how the code is meant to work if the computer just got burnt...

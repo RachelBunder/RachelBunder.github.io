@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 published: true
 date: 2019-12-01 12:00 f+1000
+classes: wide
 ---
 
 Learning R more has been in my to do list for a while, so I thought I would attempt __[Advent of Code](https://adventofcode.com/2019/about)__ in R. Here is Day 1.

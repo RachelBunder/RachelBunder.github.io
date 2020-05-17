@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 published: true
 date: 2019-12-05 12:00 f+1000
+classes: wide
 ---
 
 __[Fifth day of Advent of Code](https://adventofcode.com/2019/day/4)__, with another ops-code problem. 

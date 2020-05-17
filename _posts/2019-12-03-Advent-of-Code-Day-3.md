@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 published: true
 date: 2019-12-03 12:00 f+1000
+classes: wide
 ---
 
 __[Third day of Advent of Code](https://adventofcode.com/2019/day/3)__. During undergrad, my favourite comment I got on an assignment was 'This code should be taken out and be shot'[^1]. I feel like my solution for Day 3 is another example of this.
