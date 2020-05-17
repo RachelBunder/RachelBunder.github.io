@@ -159,8 +159,8 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minima
+# remote_theme: "mmistakes/minimal-mistakes"
 
 # Markdown Processing
 kramdown:
