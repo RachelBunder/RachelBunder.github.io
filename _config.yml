@@ -116,9 +116,8 @@ author:
 
 
 # Reading Files
-include:
-  - .htaccess
-  - _pages
+include: ["_pages"]
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -195,10 +194,9 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-include-cache
 
 
--# mimic GitHub Pages with --safe
+# mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
