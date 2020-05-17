@@ -159,8 +159,8 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-theme: minimal
-# remote_theme: "mmistakes/minimal-mistakes"
+# theme: minimal
+remote_theme: "mmistakes/minimal-mistakes@4.19.2"
 
 # Markdown Processing
 kramdown:
@@ -195,8 +195,10 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-include-cache
 
-# mimic GitHub Pages with --safe
+
+-# mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
