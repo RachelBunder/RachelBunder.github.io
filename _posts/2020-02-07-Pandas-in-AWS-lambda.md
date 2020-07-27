@@ -1,6 +1,7 @@
 ---
 layout: single
 author_profile: true
+title: Pandas in AWS Lambda
 published: true
 date: 2020-02-07 12:00 f+1000
 classes: wide
